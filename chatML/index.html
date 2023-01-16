@@ -1171,8 +1171,8 @@
                         <details class="card-chtML">
                             <summary class="card-header-chtML">Free services</summary>
                             <div class="card-body-chtML"> 
-                            	<a href="https://wopr.ru/" class="button-chtML light-chtML" target="_blank"> <span> <span class="chtML-comment">Free website</span> creation WordPress </span> <span class="_blank"></span> </a> 
-                            	<a href="https://usink.ru/" class="button-chtML light-chtML" target="_blank"> <span> <span class="chtML-comment">Free website</span> creation without CMS </span> <span class="_blank"></span> </a> 
+                                <a href="https://wopr.ru/" class="button-chtML light-chtML" target="_blank"> <span> <span class="chtML-comment">Free website</span> creation WordPress </span> <span class="_blank"></span> </a> 
+                                <a href="https://usink.ru/" class="button-chtML light-chtML" target="_blank"> <span> <span class="chtML-comment">Free website</span> creation without CMS </span> <span class="_blank"></span> </a> 
                             </div>
                         </details>
                         <details class="card-chtML">
@@ -1197,7 +1197,7 @@
                                                 <div>54<sup>$</sup></div>
                                             </div>
                                         </div>
- 										<div class="price-svg-chtML"> 
+                                        <div class="price-svg-chtML"> 
                                             <div class="svg"><span class="dollar"></span></div>
                                             <div class="svg"><span class="btc"></span></div>
                                         </div>
@@ -1237,23 +1237,28 @@
                                     <p>At the end of the trial period, you will receive payment instructions!</p>
                                 </div>
                             </div>
-                    	</details>
-                	</div>
-            	</div>
-    		</div>
-    	</div>  
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>    
 </section>
 <script>
-    ! function() {
-        var e = document.querySelector(".chtML-footer"),
-            t = e.querySelector(".chtML-anim");
-        t.classList.remove("chtML-anim-transition"), new IntersectionObserver((e => {
-            e.forEach((e => {
-                ("function" != typeof getCurrentAnimationPreference || getCurrentAnimationPreference()) && (e.isIntersecting ? t.classList.add("chtML-anim-transition") : t.classList.remove("chtML-anim-transition"))
-            }))
-        })).observe(e)
-    }();
+
+document.addEventListener("scroll", handleScroll);
+var scrollToTopBtn = document.querySelector(".chtML-anim");
+function handleScroll() {
+  var scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var GOLDEN_RATIO = 0.99;
+  if ((document.documentElement.scrollTop / scrollableHeight ) > GOLDEN_RATIO) {
+    document.querySelector('.chtML-anim').classList.add('chtML-anim-transition');
+  } else {
+    document.querySelector('.chtML-anim').classList.remove('chtML-anim-transition');
+  }
+}
+
+
     console.info(" < /> with %c♥️%c from Mikhail", "color: #e25555", "color: unset");
     ! function(e, t) {
         "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = "undefined" != typeof globalThis ? globalThis : e || self).axios = t()
