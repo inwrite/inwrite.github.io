@@ -133,7 +133,6 @@
     }
 
     .chtML-footer a {
-        display: none;
         position: fixed;
         bottom: 0;
         right: 0;
@@ -1253,11 +1252,11 @@ function handleScroll() {
   var scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var GOLDEN_RATIO = 0.99;
   if ((document.documentElement.scrollTop / scrollableHeight ) > GOLDEN_RATIO) {
-    chtML-anim.style.display = "block";
-//     document.querySelector('.chtML-anim').classList.add('chtML-anim-transition');
+//     chtML-anim.style.display = "block";
+    document.querySelector('.chtML-anim').classList.add('chtML-anim-transition');
   } else {
-    chtML-anim.style.display = "none";
-//     document.querySelector('.chtML-anim').classList.remove('chtML-anim-transition');
+//     chtML-anim.style.display = "none";
+    document.querySelector('.chtML-anim').classList.remove('chtML-anim-transition');
   }
 }
 
