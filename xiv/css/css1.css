@@ -6940,13 +6940,13 @@ video {
 @keyframes show_pic_3 {0% {opacity: 0;}100% {opacity: 1;}}
 
 .editions_iphone_hide {
-    transform: translateY(400%);
+    transform: translateY(600%);
     animation-duration: 1s;
     animation-fill-mode: forwards; 
     animation-delay: 1s;
     animation-name: editions_iphone_hide;   
 }
-@keyframes editions_iphone_hide {0% {transform: translateY(400%);}100% {transform: translateY(0px);}}
+@keyframes editions_iphone_hide {0% {transform: translateY(600%);}100% {transform: translateY(0px);}}
 
 .opis_menu {
     font-weight: 500;
