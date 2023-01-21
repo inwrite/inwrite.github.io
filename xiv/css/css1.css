@@ -8,7 +8,7 @@
     border: 0 solid #e5e7eb
 }
 
-:after,
+:after,.Overlay, .OverlayHej, .OverlayXiv
 :before {
     --tw-content: ""
 }
@@ -4323,7 +4323,7 @@ video {
     cursor: zoom-out;
     animation-name: overlay;
     animation-timing-function: ease-in-out;
-    animation-duration: .3s;
+/*     animation-duration: .3s; */
     transition: opacity .3s ease-in-out, transform .3s ease-in-out;
     transform: translateY(20px);
 }
