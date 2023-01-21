@@ -6716,7 +6716,8 @@ video {
 
 .Xiv_maskTablet__dYrF3 {
     -webkit-mask-image: url(../images/xiv/ipad-mask.svg);
-    mask-image: url(../images/xiv/ipad-mask.svg)
+    mask-image: url(../images/xiv/ipad-mask.svg);
+    left: 18px;
 }
 
 .Xiv_maskDesktop__SzYey {
