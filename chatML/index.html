@@ -243,19 +243,19 @@ console.info(" < /> with %c♥️%c from Mikhail", "color: #e25555", "color: uns
 </script>
 
 <script>
-	let scrollpos = window.scrollY
-	const header = document.querySelector(".chtML-header")
-	const scrollChange = 20
-	const add_class_on_scroll = () => header.classList.add("chtML-headeradd")
-	const remove_class_on_scroll = () => header.classList.remove("chtML-headeradd")
+	let scrollposAdd = window.scrollY
+	const headerScrollAdd = document.querySelector(".chtML-header")
+	const scrollChangeAdd = 20
+	const add_class_on_scroll = () => headerScrollAdd.classList.add("chtML-headeradd")
+	const remove_class_on_scroll = () => headerScrollAdd.classList.remove("chtML-headeradd")
 	window.addEventListener('scroll', function() { 
-	  scrollpos = window.scrollY;
-	  if (scrollpos >= scrollChange) { add_class_on_scroll() }
+	  scrollposAdd = window.scrollY;
+	  if (scrollposAdd >= scrollChangeAdd) { add_class_on_scroll() }
 	  else { remove_class_on_scroll() }
 	})
 
 	document.querySelector('.modal-window-chtML')?.addEventListener('scroll', (event) => {
-	  if (event.target.scrollTop >= scrollChange) {
+	  if (event.target.scrollTop >= scrollChangeAdd) {
 	    add_class_on_scroll();
 	  } else {
 	    remove_class_on_scroll();
