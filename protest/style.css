@@ -101,6 +101,7 @@ section {
   position: absolute;
   bottom: -100%;
   width: 100%;
+  opacity: 0;
   transition: all .3s;
 }
 
@@ -139,13 +140,13 @@ section>img {
 
 .hover.active:after,
 .hover:after {
-  content: "";
-  width: 100%;
-  position: absolute;
-  height: 8%;
-  z-index: 1;
-  bottom: 0;
-  background-image: linear-gradient(0deg, var(--white), transparent);
+  /* content: ""; */
+  /* width: 100%; */
+  /* position: absolute; */
+  height: 0%;
+  /* z-index: 1; */
+  /* bottom: 0; */
+  /* background: red; */
 }
 
 div.hover.active>.div-t-shirt,
@@ -156,6 +157,7 @@ div.hover:hover>.div-t-shirt {
 div.hover.active>.div-button,
 div.hover:hover>.div-button {
   bottom: 0;
+  opacity: 1;
 }
 
 
