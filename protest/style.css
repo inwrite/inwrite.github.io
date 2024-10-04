@@ -1,13 +1,13 @@
 :root {
   --link: #007aff;
   --link: #0a57d0;
-  --link: 211.29deg 100% 50% / 72%);
+  --link: hsl(211.29deg 100% 50% / 72%);
   --link: 211.29deg 100% 50%;
-  --link: 216.67deg 90.83% 42.75% / 72%);
+  --link: hsl(216.67deg 90.83% 42.75% / 72%);
   --link: 216.67deg 90.83% 42.75%;
   --white: #fff;
   --black: #000;
-  --white: hsl0deg 0% 100% / 73%);
+  --white: hsl(0deg 0% 100% / 73%);
   --white: 0deg 0% 100%;
   --black: 0deg 0% 0%;
 }
@@ -22,14 +22,14 @@ html,
 body {
   margin: 0;
   height: 100%;
-  font-family: sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   overflow: hidden;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
+  font-size: 16px;
   color: hsl(var(--black) / 90%);
+  line-height: 1.5;
 }
 
 header {
@@ -48,7 +48,14 @@ header {
   align-items: center;
   width: 42px;
   height: 42px;
+  width: 2.1667em;
+  height: 2.1667em;
   transition: background-color .2s;
+}
+
+.about svg {
+    width: 1.25em;
+    height: 1.25em;
 }
 
 .scroll-container {
@@ -60,19 +67,6 @@ header {
   /* display: flex; */
   /* height: 100vh; */
   /* background: red; */
-}
-
-
-.button {
-  background-color: hsl(var(--link) /8%);
-  color: hsl(var(--white) / 100%);
-  color: hsl(var(--link) / 100%);
-  backdrop-filter: blur(24px);
-  text-decoration: none !important;!i;!;
-  border-radius: 99px;
-  padding: 14px 20px;
-  z-index: 1;
-  transition: background-color .2s;
 }
 
 section {
@@ -87,7 +81,21 @@ section {
   position: relative;
   z-index: 1;
   background-color: var(--white);
+  transition: min-height .5s;
 }
+
+.button {
+  background-color: hsl(var(--link) /8%);
+  color: hsl(var(--white) / 100%);
+  color: hsl(var(--link) / 100%);
+  backdrop-filter: saturate(5) blur(48px);
+  text-decoration: none !important;
+  border-radius: 99px;
+  padding: .5em 1em;
+  z-index: 1;
+  transition: background-color .2s;
+}
+
 
 .div-button {
   height: 50%;
@@ -96,8 +104,8 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 20px;
-  padding-bottom: 60px;
+  padding: 2em;
+  padding-bottom: 4em;
   position: absolute;
   bottom: -100%;
   width: 100%;
@@ -136,17 +144,6 @@ section>img {
   height: 100%;
   max-height: 80svh;
   overflow: hidden;
-}
-
-.hover.active:after,
-.hover:after {
-  /* content: ""; */
-  /* width: 100%; */
-  /* position: absolute; */
-  height: 0%;
-  /* z-index: 1; */
-  /* bottom: 0; */
-  /* background: red; */
 }
 
 div.hover.active>.div-t-shirt,
@@ -189,22 +186,25 @@ div.hover:hover>.div-button {
   transform: translate(-50%, -50%) scale(.9);
   width: 90%;
   max-width: 65ch;
-  /* padding-top: 19px; */
-  /* background-color: hwb(0deg 70% 30% / 82%); */
-  /* background-color: hwb(0deg 93.36% 6.64% / 82%); */
-  /* background-color: rgb(255 255 255 / 20%); */
-  /* backdrop-filter: blur(150px); */
-  /* backdrop-filter: blur(50px); */
-  border-radius: 14px;
   opacity: 0;
   z-index: -1000;
   transition: all .2s;
-  /* box-shadow: 0 0 32px 0 hwb(0deg 0% 100% / 20%); */
-  /* box-shadow: 0 0 32px 0px hwb(0deg 0% 100% / 8%); */
 }
 
 .modal div {
-  padding: 19px 16px 19px 16px;
+  padding: .5rem 1rem;
+  border: 1px solid;
+  border-color: hsl(var(--black) / 0%);
+}
+
+.modal video {
+    width: 2em;
+    height: 2em;
+    border-radius: 2.5em;
+    position: relative;
+    margin-left: .1em;
+    right: -0.1em;
+    top: 0.625em;
 }
 
 h1 {
@@ -216,6 +216,9 @@ h1 {
   opacity: 1;
   z-index: 1000;
   transform: translate(-50%, -50%) scale(1);
+  overflow: auto;
+  max-height: 100vh;
+  max-height: 100svh;
 }
 
 .modal-overlay {
@@ -224,10 +227,8 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: hsl(240deg 33% 11% / 30%);
   background-color: hsl(0deg 0% 100% / 30%);
-  backdrop-filter: blur(14px);
-  backdrop-filter: saturate(10.5) blur(40px);
+  backdrop-filter: saturate(1) blur(150px);
   z-index: 999;
   opacity: 0;
   z-index: -999;
@@ -245,7 +246,7 @@ h1 {
   cursor: pointer;
   text-decoration: none;
   width: 100%;
-  height: 44px;
+  height: 3em;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -277,8 +278,6 @@ hr {
   font-size: 75%;
   font-size: 13px;
   font-size: 81.25%;
-  /* color: #3d3d3d; */
-  /* color: #808080; */
   color: hsl(var(--black) /50%);
   margin-top: 5%;
   max-width: 72%;
@@ -298,4 +297,41 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+section.scrolle-down {
+  min-height: 70svh;
+}
+
+
+
+a.a-ava  {
+    background-color: hsl(var(--link) / 8%);
+    padding: .5em 0em .5em 1em;
+    border-radius: 3rem;
+    transition: background-color.2s;
+}
+
+a.a-ava:hover {
+    background-color: hsl(var(--link) / 12%);
+    text-decoration: none;
+}
+
+
+
+
+@media (min-width: 769px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+
+
+@media (min-width: 1441px) {
+  html,
+  body {
+    font-size: 24px;
+  }
 }
