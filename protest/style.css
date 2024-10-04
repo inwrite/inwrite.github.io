@@ -277,6 +277,7 @@ hr {
   font-size: 75%;
   font-size: 13px;
   font-size: 81.25%;
+  font-size: 75%;
   color: hsl(var(--black) /50%);
   margin-top: 5%;
   max-width: 72%;
@@ -287,6 +288,7 @@ a {
   color: hsl(var(--link) /100%);
   text-decoration: none;
   transition: text-decoration .2s;
+  /* font-size: 80.25%; */
 }
 
 
