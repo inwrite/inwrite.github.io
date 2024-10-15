@@ -151,6 +151,7 @@ function handleButtonClick(targetSectionClass, clickedButton) {
     if (currentSection) {
         // Перемещаем текущую секцию за экран и меняем её прозрачность
         currentSection.style.transform = 'translateX(-100vw)';
+        targetSection.style.webkitTransform = 'translateX(0vw)';
         currentSection.style.opacity = '0';
         currentSection.classList.remove('red'); // Удаляем класс red
         previousSections.push(currentSection); // Сохраняем секцию в истории
@@ -158,6 +159,7 @@ function handleButtonClick(targetSectionClass, clickedButton) {
 
     // Перемещаем целевую секцию на экран и делаем её видимой
     targetSection.style.transform = 'translateX(0vw)';
+    targetSection.style.webkitTransform = "translateX(0vw)";
     targetSection.style.opacity = '1';
     targetSection.classList.add('red'); // Добавляем класс red
     addQrImageAnimation(); // Добавляем анимацию для qr-image
@@ -170,6 +172,7 @@ function handleBackButton(clickedButton) {
     if (currentSection) {
         // Перемещаем текущую активную секцию за экран и делаем её невидимой
         currentSection.style.transform = 'translateX(100vw)';
+        currentSection.style.webkitTransform = "translateX(100vw)";
         currentSection.style.opacity = '0';
         currentSection.classList.remove('red'); // Удаляем класс red
     }
@@ -178,6 +181,7 @@ function handleBackButton(clickedButton) {
     if (previousSections.length > 0) {
         const lastSection = previousSections.pop();
         lastSection.style.transform = 'translateX(0vw)';
+        currentSection.style.webkitTransform = "translateX(0vw)";
         lastSection.style.opacity = '1';
         lastSection.classList.add('red'); // Добавляем класс red
         addQrImageAnimation(); // Добавляем анимацию для qr-image
