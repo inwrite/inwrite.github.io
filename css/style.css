@@ -706,8 +706,8 @@ h1, h2 {
 }
 
 
-section.red .qr-image #canvas:after,
-section.red .qr-image.sendtg:after {
+section.move-svg .qr-image #canvas:after,
+section.move-svg .qr-image.sendtg:after {
     animation: 500ms steps(30) both;
 }
 
