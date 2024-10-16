@@ -152,14 +152,14 @@ function handleButtonClick(targetSectionClass, clickedButton) {
         // Перемещаем текущую секцию за экран и меняем её прозрачность
         currentSection.style.left = '-100vw';
         currentSection.style.opacity = '0';
-        currentSection.classList.remove('red'); // Удаляем класс red
+        currentSection.classList.remove('move-svg'); // Удаляем класс move-svg
         previousSections.push(currentSection); // Сохраняем секцию в истории
     }
 
     // Перемещаем целевую секцию на экран и делаем её видимой
     targetSection.style.left = '0vw';
     targetSection.style.opacity = '1';
-    targetSection.classList.add('red'); // Добавляем класс red
+    targetSection.classList.add('move-svg'); // Добавляем класс move-svg
     addQrImageAnimation(); // Добавляем анимацию для qr-image
     activeSection = targetSection;
 }
@@ -171,7 +171,7 @@ function handleBackButton(clickedButton) {
         // Перемещаем текущую активную секцию за экран и делаем её невидимой
         currentSection.style.left = '100vw';
         currentSection.style.opacity = '0';
-        currentSection.classList.remove('red'); // Удаляем класс red
+        currentSection.classList.remove('move-svg'); // Удаляем класс move-svg
     }
 
     // Возвращаем предыдущую секцию на экран из истории
@@ -179,7 +179,7 @@ function handleBackButton(clickedButton) {
         const lastSection = previousSections.pop();
         lastSection.style.left = '0vw';
         lastSection.style.opacity = '1';
-        lastSection.classList.add('red'); // Добавляем класс red
+        lastSection.classList.add('move-svg'); // Добавляем класс move-svg
         addQrImageAnimation(); // Добавляем анимацию для qr-image
         activeSection = lastSection;
     }
@@ -192,11 +192,11 @@ function handleBackButton(clickedButton) {
 function addQrImageAnimation() {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
-        section.red .qr-image #canvas:after {
+        section.move-svg .qr-image #canvas:after {
             animation-name: t-logo-play;
             animation-delay: .15s;
         }
-        section.red .qr-image.sendtg:after {
+        section.move-svg .qr-image.sendtg:after {
             animation-name: t-logo-play;
             animation-delay: .15s;
         }
