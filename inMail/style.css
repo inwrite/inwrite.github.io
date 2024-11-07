@@ -1,0 +1,275 @@
+:root {
+  --black: 0 0 0;
+  --white: 255 255 255;
+  --black-: rgb(var(--black) / 100%);
+  --white-: rgb(var(--white) / 100%);
+  --google-outline-blue: 1 95 204;
+  --google-outline-yellowe: 229 151 0;
+  --google-outline-blue-: rgb(var(--google-outline-blue) / 100%);
+  --google-outline-yellowe-: rgb(var(--google-outline-yellowe) / 100%);
+  --outline: var(--google-outline-blue-);
+  --red: 225 0 0;
+  --red-: rgb(var(--red) / 100%);
+  --green: 0 128 0;
+  --green-: rgb(var(--green) / 80%);
+  --link: #0000ee;
+  /* --link: #2964aa; */
+  --link-visited: #551a8b;
+  --link-hover: #0000a9;
+  --link-active: #ff0000;
+  --bg-input: rgb(var(--black) / 5%);
+  --border: rgb(var(--black) / 7%);
+  --bg-hover: rgb(var(--black) / 2%);
+  --black-50: rgb(var(--black) / 50%);
+  --black50: rgb(var(--black) / 2%);
+  --google-outline-blue-bg: rgb(var(--google-outline-blue) / 10%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: 0 0 0;
+    --black: 255 255 255;
+    --black-: rgb(var(--black) / 100%);
+    --white-: rgb(var(--white) / 100%);
+    --google-outline-blue: 1 95 204;
+    --google-outline-yellowe: 229 151 0;
+    --google-outline-blue-: rgb(var(--google-outline-blue) / 100%);
+    --google-outline-yellowe-: rgb(var(--google-outline-yellowe) / 100%);
+    --outline: var(--google-outline-blue-);
+    --google-outline-blue-: #015fcc;
+    --google-outline-yellowe-: #e59700;
+    --outline: var(--google-outline-blue);
+    --red: 225 0 0;
+    --red--: rgb(var(--red) / 100%);
+    --green: 0 128 0;
+    --green-: rgb(var(--green) / 81%);
+    --link: #1e90ff;
+    --link: #4493f8;
+    --link-visited: #7542a4;
+    --link-hover: #187bdc;
+    --link-active: #ff0000;
+    --bg-input: rgb(var(--black) / 8%);
+    --border: rgb(var(--black) / 8%);
+    --bg-hover: rgb(var(--black) / 4%);
+    --black-50: rgb(var(--black) / 50%);
+    --google-outline-blue-bg: rgb(var(--google-outline-blue) / 25%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: normal;
+  -webkit-tap-highlight-color: transparent;
+  font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI,
+    Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji,
+    Segoe UI Symbol;
+  font-variation-settings: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  font-size: 16px;
+  background-color: rgb(var(--white) / 100%);
+  color: rgb(var(--black) / 100%);
+}
+
+a:link {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:active {
+  color: var(--link-active);
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  align-items: center;
+}
+
+section>div {
+  max-width: 50em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  width: 100%;
+  padding: 6.8125em 1.5em 1.5em;
+  padding: 0.625em 0.625em 0.625em;
+  /* margin-top: calc(50svh - 14em); */
+  transition: margin-top 0.3s;
+  position: relative;
+}
+
+input#addr {
+  background-color: var(--bg-input);
+  border: 0.05em solid;
+  border-color: rgb(var(--black) / 0%);
+  border-radius: 1.75em;
+  border-radius: .5em;
+  gap: 0.375em;
+  display: flex;
+  width: 100%;
+  color: rgb(var(--black) / 100%);
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.5em;
+  font-family: monospace;
+  padding: 0.8125em 1.1em 0.8125em 1.1em;
+  line-height: 1.5;
+  min-height: 3.25em;
+  min-height: 6em;
+  text-align: center;
+}
+
+button {
+  width: auto;
+  border-radius: 99em;
+  padding: 1em 0.75em;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: transparent;
+  border: 0.05em solid;
+  border-color: rgb(var(--black) / 20%);
+  font-size: .875em;
+  line-height: 1.25rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.25em;
+  padding: 0.6965em .875em;
+  transition: background-color .15s;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  gap: 0.5em;
+  color: var(--black-);
+}
+
+button svg {
+  width: 1.3335em;
+  height: 1.3335em;
+}
+
+button#copyEmailBtn,
+button#newAddressBtn {
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  padding-bottom: .25rem;
+  padding-top: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  font-size: .75em;
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(var(--black) / 50%);
+  font-weight: 500;
+  transition: color .15s;
+}
+
+button#copyEmailBtn:hover,
+button#newAddressBtn:hover {
+  color: var(--black-);
+}
+
+button#newAddressBtn {
+  right: auto;
+  left: 1em;
+}
+
+button#loadMailBtn {
+  position: relative;
+  background-color: var(--white-);
+  transition: transform .15s, box-shadow .15s, background-color .15s;
+  width: max-content;
+  margin: 0 auto;
+}
+
+button#loadMailBtn:hover {
+  background-color: rgb(var(--black) / 4%);
+}
+
+button#loadMailBtn:active {
+  transform: scale(.98);
+  box-shadow: 0em .05em .1em 0em rgb(var(--black) / 12%);
+}
+
+
+div#emails {
+  width: 100%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+div#emails>div {
+  border-top: 0.05em solid;
+  margin-bottom: 2em;
+  border-color: rgb(var(--black) / 15%);
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  padding-bottom: 0.625em;
+  padding-top: 4em;
+}
+
+
+
+footer {
+  border-top: 0.05em solid;
+  border-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--black-50);
+  font-size: .75em;
+  background-color: var(--white-);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+footer a:link {
+    display: flex;
+    align-items: center;
+    gap: .25em;
+    text-decoration: none;
+    color: var(--black-);
+    padding: 0.6965em .875em;
+    font-weight: 500;
+}
+
+footer a:link svg {
+    width: 1.15em;
+    height: 1.15em;
+}
+
+footer a:link:hover {
+    color: var(--black-);
+}
