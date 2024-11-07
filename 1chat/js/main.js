@@ -223,6 +223,24 @@ updateBodyClass();
 
 
 
+// document.addEventListener("click", function (event) {
+//   const button = event.target.closest(".qwestion");
+//   if (button) {
+//     const textarea = document.getElementById("textarea");
+//     const qwestionsData = button.getAttribute("data-qwestions") || "";
+//     textarea.value = qwestionsData;
+//     textarea.focus();
+
+//     // Пересчитываем высоту textarea после вставки текста
+//     textarea.style.height = "auto";
+//     textarea.style.height = `${textarea.scrollHeight}px`;
+
+//     updateBodyClass();
+//     updateSendButtonState();
+//   }
+// });
+
+
 document.addEventListener("click", function (event) {
   const button = event.target.closest(".qwestion");
   if (button) {
@@ -237,8 +255,15 @@ document.addEventListener("click", function (event) {
 
     updateBodyClass();
     updateSendButtonState();
+
+    // Автоматическое нажатие кнопки отправки
+    const sendButton = document.getElementById("qwestions-button-send");
+    if (sendButton) {
+      sendButton.click();
+    }
   }
 });
+
 
 // Обработчик для поля textarea, отслеживающий изменения
 document.getElementById("textarea").addEventListener("input", () => {
