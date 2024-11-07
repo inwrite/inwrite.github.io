@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random SVG Loader</title>
+</head>
+<body>
+    <button id="loadImageButton">Загрузить случайное изображение</button>
+    <img class="randomsvg" src="img/image1.svg" alt="Random SVG">
+
+    <script>
+        document.getElementById("loadImageButton").addEventListener("click", () => {
+            const imgElement = document.querySelector(".randomsvg");
+            if (imgElement) {
+                const folderPath = "img/";
+                const svgFiles = ["image1.svg", "image2.svg", "image3.svg"]; // Укажите ваши имена файлов
+                const randomIndex = Math.floor(Math.random() * svgFiles.length);
+                imgElement.src = folderPath + svgFiles[randomIndex];
+            }
+        });
+    </script>
+</body>
+</html>
