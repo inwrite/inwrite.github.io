@@ -13,7 +13,6 @@
   --green: 0 128 0;
   --green-: rgb(var(--green) / 80%);
   --link: #0000ee;
-  /* --link: #2964aa; */
   --link-visited: #551a8b;
   --link-hover: #0000a9;
   --link-active: #ff0000;
@@ -118,128 +117,211 @@ section>div {
   max-width: 50em;
   display: flex;
   flex-direction: column;
-  gap: 0.625em;
+  gap: 1.3em;
   width: 100%;
-  padding: 6.8125em 1.5em 1.5em;
   padding: 0.625em 0.625em 0.625em;
-  /* margin-top: calc(50svh - 14em); */
   transition: margin-top 0.3s;
   position: relative;
 }
 
-input#addr {
-  background-color: var(--bg-input);
-  border: 0.05em solid;
-  border-color: rgb(var(--black) / 0%);
-  border-radius: 1.75em;
-  border-radius: .5em;
-  gap: 0.375em;
+.inMail {
   display: flex;
+  flex-direction: column;
+  gap: 1.3em;
   width: 100%;
-  color: rgb(var(--black) / 100%);
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 1.5em;
-  font-family: monospace;
-  padding: 0.8125em 1.1em 0.8125em 1.1em;
-  line-height: 1.5;
-  min-height: 3.25em;
-  min-height: 6em;
-  text-align: center;
-}
-
-button {
-  width: auto;
-  border-radius: 99em;
-  padding: 1em 0.75em;
-  cursor: pointer;
-  font-size: 1em;
-  background-color: transparent;
-  border: 0.05em solid;
-  border-color: rgb(var(--black) / 20%);
-  font-size: .875em;
-  line-height: 1.25rem;
-  font-weight: 500;
-  justify-content: center;
-  line-height: 1.25em;
-  padding: 0.6965em .875em;
-  transition: background-color .15s;
-  display: flex;
-  align-items: center;
-  font-size: 1em;
-  gap: 0.5em;
-  color: var(--black-);
-}
-
-button svg {
-  width: 1.3335em;
-  height: 1.3335em;
-}
-
-button#copyEmailBtn,
-button#newAddressBtn {
-  position: absolute;
-  top: 1.5em;
-  right: 1em;
-  padding-bottom: .25rem;
-  padding-top: .25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25em;
-  font-size: .75em;
-  background-color: transparent;
-  border-color: transparent;
-  color: rgb(var(--black) / 50%);
-  font-weight: 500;
-  transition: color .15s;
-}
-
-button#copyEmailBtn:hover,
-button#newAddressBtn:hover {
-  color: var(--black-);
-}
-
-button#newAddressBtn {
-  right: auto;
-  left: 1em;
-}
-
-button#loadMailBtn {
+  transition: margin-top 0.3s;
   position: relative;
-  background-color: var(--white-);
-  transition: transform .15s, box-shadow .15s, background-color .15s;
-  width: max-content;
-  margin: 0 auto;
-}
-
-button#loadMailBtn:hover {
-  background-color: rgb(var(--black) / 4%);
-}
-
-button#loadMailBtn:active {
-  transform: scale(.98);
-  box-shadow: 0em .05em .1em 0em rgb(var(--black) / 12%);
 }
 
 
-div#emails {
-  width: 100%;
-  margin-top: 4em;
-  margin-bottom: 4em;
+.inMail input#addr {
+background-color: var(--bg-input);
+border: 0.05em solid;
+border-color: rgb(var(--black) / 0%);
+border-radius: 1.75em;
+border-radius: .5em;
+gap: 0.375em;
+display: flex;
+width: 100%;
+color: rgb(var(--black) / 100%);
+justify-content: flex-start;
+align-items: flex-start;
+font-size: 1.5em;
+font-family: monospace;
+padding: 0.8125em 1.1em 0.8125em 1.1em;
+line-height: 1.5;
+min-height: 6em;
+text-align: center;
+max-width: 100%;
 }
 
-div#emails>div {
-  border-top: 0.05em solid;
-  margin-bottom: 2em;
-  border-color: rgb(var(--black) / 15%);
-  padding-left: 0.625em;
-  padding-right: 0.625em;
-  padding-bottom: 0.625em;
-  padding-top: 4em;
+.inMail button {
+width: auto;
+border-radius: 99em;
+padding: 1em 0.75em;
+cursor: pointer;
+font-size: 1em;
+background-color: transparent;
+border: 0.05em solid;
+border-color: rgb(var(--black) / 20%);
+font-size: .875em;
+line-height: 1.25rem;
+font-weight: 500;
+justify-content: center;
+line-height: 1.25em;
+padding: 0.6965em .875em;
+transition: background-color .15s;
+display: flex;
+align-items: center;
+font-size: 1em;
+gap: 0.5em;
+color: var(--black-);
+}
+
+.inMail button svg {
+width: 1.3335em;
+height: 1.3335em;
+}
+
+.inMail button#copyEmailBtn, 
+.inMail button#newAddressBtn {
+position: absolute;
+top: 1.5em;
+right: 1em;
+padding-bottom: .25rem;
+padding-top: .25rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.25em;
+font-size: .75em;
+background-color: transparent;
+border-color: transparent;
+color: rgb(var(--black) / 50%);
+font-weight: 500;
+transition: color .15s;
+}
+
+.inMail button#copyEmailBtn:hover,
+.inMail button#newAddressBtn:hover {
+color: var(--black-);
+}
+
+.inMail button#newAddressBtn {
+right: auto;
+left: 1em;
+}
+
+.inMail button#loadMailBtn {
+position: relative;
+background-color: var(--white-);
+transition: transform .15s, box-shadow .15s, background-color .15s;
+width: max-content;
+margin: 0 auto;
+order: 1;
+}
+
+.inMail button#loadMailBtn:hover {
+background-color: rgb(var(--black) / 4%);
+}
+
+.inMail button#loadMailBtn:active {
+transform: scale(.98);
+box-shadow: 0em .05em .1em 0em rgb(var(--black) / 12%);
+}
+
+.inMail div#emails {
+width: 100%;
+order: 2;
+}
+
+.inMail div#emails>div {
+border-top: 0.05em solid;
+margin-top: 4em;
+margin-bottom: 4em;
+border-color: rgb(var(--black) / 15%);
+padding-left: 0.625em;
+padding-right: 0.625em;
+padding-bottom: 0.625em;
+padding-top: 4em;
+display: grid;
+grid-template-columns: max-content 1fr;
+gap: .5em;
+align-items: start;
+width: 100%;
+}
+
+.inMail button svg:nth-child(2) {
+  opacity: 0;
+  position:absolute;
+  left: .875em;
+}
+
+.inMail button.show-icon svg:nth-child(2) {
+  opacity: 1;
+}
+
+.inMail button.show-icon svg:nth-child(1) {
+  opacity: 0;
+}
+
+.inMail button#loadMailBtn.show-icon + input {
+background-image: linear-gradient(270deg, rgb(var(--black) / 0%) 48.44%, rgb(var(--black) / 4%) 75.52%, rgb(var(--black) / 0%) 100%);
+background-repeat: no-repeat;
+animation: bg-move linear 1s infinite;
+}
+
+@-webkit-keyframes bg-move {
+0%   { background-position: -25em 0; }
+100% { background-position: 50em 0; }
+}
+@keyframes bg-move {
+0%   { background-position: -25em 0; }
+100% { background-position: 50em 0; }
+}
+
+.inMail button#loadMailBtn.new-post + input {
+background-color: rgb(var(--google-outline-blue) / 8%);
+animation: none;
+}
+
+.inMail div#emails b {
+  font-weight: 500;
+  color: rgb(var(--black) / 50%);
+  justify-self: start;
+  font-size: .75em;
+  display: flex;
+  align-items: center;
+  margin-top: .3em;
+}
+
+.inMail div#emails b + div {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.inMail div#emails b:nth-child(5) + div  p {
+  margin-top: 0;
+}
+
+.inMail div#emails b + div {
+  margin-bottom: 1.5em;
 }
 
 
+
+
+
+@media (max-width: 760px) {
+html {
+  /* font-size: 22px; */
+}
+
+.inMail div#emails>div {
+  grid-template-columns: auto;
+}
+
+}
 
 footer {
   border-top: 0.05em solid;
@@ -273,3 +355,10 @@ footer a:link svg {
 footer a:link:hover {
     color: var(--black-);
 }
+
+
+
+
+
+
+

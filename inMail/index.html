@@ -54,14 +54,35 @@
 
     <main>
       <section>
-        <div class="inMail"></div>
+        <div class="inMail">
+          <button id="loadMailBtn"><svg width="24" height="24"><use xlink:href="#icon-download"></use></svg><svg width="24" height="24"><use xlink:href="#icon-download"></use></svg><span>Load Emails from Server</span></button>
+          <input id="addr" placeholder="email address" readonly>
+          <button id="copyEmailBtn"><svg width="24" height="24"><use xlink:href="#icon-copy"></use></svg><svg width="24" height="24"><use xlink:href="#icon-success"></use></svg><span>Copy Email Address</span></button>
+          <button id="newAddressBtn"><svg width="24" height="24"><use xlink:href="#icon-refresh"></use></svg><svg width="24" height="24"><use xlink:href="#icon-success"></use></svg><span>Generate New Address</span></button>
+          <div id="emails"></div>
+        </div>
       </section>
+      <!-- <button id="add">Add</button> -->
     </main>
 
     <footer>
-      <a href="http://netwebdev.github.io" target="_blank" rel="noopener noreferrer"><svg width="24" height="24"><use xlink:href="#icon-github"></use></svg> GitHub</a>
+      <a href="https://github.com/inwrite/inMail" target="_blank" rel="noopener noreferrer"><svg width="24" height="24"><use xlink:href="#icon-github"></use></svg> GitHub</a>
     </footer>
+<!-- <script>
+document.getElementById("add").onclick = function() {
+    // Находим секцию, в которую будет добавлен div
+    const section = document.querySelector("section");
+    if (section) {
+        // Создаем новый div с классом inMail
+        const newDiv = document.createElement("div");
+        newDiv.className = "inMail";
 
+        // Добавляем div в секцию
+        section.appendChild(newDiv);
+    }
+}; -->
+
+</script>
 
 
 
