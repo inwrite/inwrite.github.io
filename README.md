@@ -5,8 +5,8 @@
 In addition to client work, I am the founder and visionary behind several personal projects:
 
 - [inWrite](https://inwrite.org/) — a convenient platform for anonymous online publishing, allowing you to share thoughts and ideas without registration.
-- [inWrite Chat](https://inwrite.org/chat/) — a secure anonymous messenger for online communication and message exchange.
-- [inWrite Mail](https://inwrite.github.io/mail/) — a service providing temporary email addresses for anonymous and secure receipt of emails.
+- [inChat](https://inwrite.org/chat/) — a secure anonymous messenger for online communication and message exchange.
+- [inMail](https://inwrite.github.io/inMail/) — a service providing temporary email addresses for anonymous and secure receipt of emails.
 - [WoPr](https://wopr.ru/) — a platform offering free creation and hosting of websites of any complexity on the WordPress CMS.
 - [UsInk](https://usink.ru/) — a service for creating and hosting simple business card websites, suitable for personal and professional purposes.
 - [Protest](https://inwrite.github.io/protest/) — a collection of my artwork and covers in SVG format, available under the Creative Commons Zero (CC0) license.
