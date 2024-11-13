@@ -1,4 +1,5 @@
-const TOKENcontact =
+if (typeof TOKENcontact === "undefined") {
+  const TOKENcontact =
 "528665965985928:AAEKRlgbGfriree74O4U3jq3SFW0AL8O_4E12pe-"
   .substring(5)
   .slice(0, -5),
@@ -84,7 +85,7 @@ form.addEventListener("submit", function (e) {
           const message = getRandomMessage("sendSuccess", name, contact);
           // Используем startTypewriterEffect для вывода успешного сообщения
           startTypewriterEffect(typewriter, `${message}`);
-        }, 3000); // 3000 миллисекунд = 3 секунды
+        }, 1000); // 1000 миллисекунд = 1 секунды
       }
     })
     .catch((error) => {
@@ -123,11 +124,11 @@ form.addEventListener("submit", function (e) {
           const message = getRandomMessage("sendError", name, contact);
           // Используем startTypewriterEffect для вывода успешного сообщения
           startTypewriterEffect(typewriter, `${message}`);
-        }, 3000); // 3000 миллисекунд = 3 секунды
+        }, 1000); // 1000 миллисекунд = 1 секунды
       }
     })
     .finally(() => {
-      console.log("end");
+      // console.log("end");
     });
 });
 }
@@ -154,3 +155,5 @@ observer.observe(document.querySelector(".messege"), {
 childList: true,
 subtree: true,
 });
+
+}
