@@ -198,6 +198,7 @@ button:hover {
 
 strong {
   font-weight: 600;
+  /* display: inline; */
 }
 
 textarea {
@@ -796,8 +797,7 @@ body.sendok .qwestions {
   margin-top: 8em;
 }
 
-.send-time.error .flex-icon:before {
-}
+.send-time.error .flex-icon:before {}
 
 .send-time.error .flex-icon:after {
   transform: rotate(45deg);
@@ -812,8 +812,7 @@ body.contactMessage button[name="contact"] {
   display: none;
 }
 
-button.qwestion.highlight {
-}
+button.qwestion.highlight {}
 
 button.qwestion.nextbtn {
   border-top-color: transparent;
@@ -839,9 +838,7 @@ img.fuck {
   padding: 1em;
 }
 
-button.qwestion[name="ukr"]:before {
-
-}
+button.qwestion[name="ukr"]:before {}
 
 button.qwestion:before {
   font-size: 0.825em;
@@ -851,11 +848,9 @@ button.qwestion:before {
   border-radius: 1em;
 }
 
-button.qwestion[name="about-me"]:before {
-}
+button.qwestion[name="about-me"]:before {}
 
-button.qwestion[name="contact"]:before {
-}
+button.qwestion[name="contact"]:before {}
 
 button.qwestion[name="temp-mail"]:before {
   content: "Web Service";
@@ -866,8 +861,7 @@ button.qwestion[name="temp-mail"] svg {
   display: none;
 }
 
-button.qwestion[name="clear-chat"]:before {
-}
+button.qwestion[name="clear-chat"]:before {}
 
 a.change-language {
   background-color: var(--white-);
@@ -1382,8 +1376,24 @@ body.personalMessage button.qwestion[name="contact"] {
 }
 
 
+.ava {
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  border-radius: 5em;
+  border: 0em solid;
+  /* border-color: var(--border); */
+  box-shadow: 0 0 0 0.05em var(--border);
+  margin-left: -6.5em;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgb(175 181 200) 0%, rgb(233 237 243));
+}
 
-
+.ava img {
+  width: 5em;
+  height: 5em;
+  transform: scale(1.275) translate(.025em, .3em);
+}
 
 @media (max-width: 760px) {
   html {
@@ -1412,14 +1422,22 @@ body.personalMessage button.qwestion[name="contact"] {
     overflow: unset;
   }
 
-  
-.inMail div#emails>div {
+  .inMail div#emails>div {
     grid-template-columns: auto;
-}
+  }
 
 }
 
+@media (max-width: 768px) {
 
+  .ava {
+    position: relative;
+    display: block;
+    margin: 0;
+    margin-bottom: 1.5em;
+  }
+
+}
 
 
 @media (min-width: 1980px) {
