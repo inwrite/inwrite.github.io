@@ -23,9 +23,18 @@ function createMailInterface() {
         genEmail(); // Generate email on button click
     };
 
-    // Generate initial email with a delay of 5 seconds
+    const loadMailBtn = document.getElementById("loadMailBtn");
+    if (loadMailBtn) {
+        loadMailBtn.classList.add("show-icon"); // Add class show-icon for the initial delay
+    }
+
+    // Generate initial email with a delay of 2 seconds
     setTimeout(() => {
-        genEmail();
+        genEmail().finally(() => {
+            if (loadMailBtn) {
+                loadMailBtn.classList.remove("show-icon"); // Remove class show-icon after initial email generation
+            }
+        });
     }, 2000);
 }
 
