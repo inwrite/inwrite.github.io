@@ -121,10 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addNextButtonHoverHandlers() {
     buttons.forEach((button, index) => {
-      // button.addEventListener("mouseenter", () => highlightNextButton(index));
-      // button.addEventListener("focus", () => highlightNextButton(index));
       button.addEventListener("mouseleave", removeNextBtnClass);
-      // button.addEventListener("blur", removeNextBtnClass);
     });
   }
 
@@ -330,44 +327,19 @@ function startTypewriterEffect(element, text, speed = 5, callback = () => {}) {
     }
   }
 
+
   function updateTextWithCursor() {
     const currentText = text.slice(0, index).replace(/\n/g, "<br/>");
     element.innerHTML = currentText + '<span class="cursor typing">&#9679;</span>';
   }
 
-  // function typeWriter() {
-  //   if (index < text.length) {
-  //     const remainingText = text.substring(index);
-  //     const match = remainingText.match(/<(a|button|img)[^>]*>(.*?)<\/\1>|<img[^>]*>/);
-
-  //     if (match && match.index === 0) {
-  //       element.innerHTML += match[0];
-  //       index += match[0].length;
-  //       scrollToBottom();
-  //       setTimeout(typeWriter, 0);
-  //     } else {
-  //       if (text[index] === "\n") {
-  //         element.innerHTML += "<br/>";
-  //         index++;
-  //         scrollToBottom();
-  //         setTimeout(typeWriter, 350);
-  //       } else {
-  //         index++;
-  //         updateTextWithCursor();
-  //         scrollToBottom();
-  //         setTimeout(typeWriter, speed);
-  //       }
-  //     }
-  //   } else {
-  //     finalizeTypingEffect();
-  //   }
-  // }
-
 
   function typeWriter() {
     if (index < text.length) {
       const remainingText = text.substring(index);
-      const match = remainingText.match(/<(a|button|img|div)[^>]*class=["']inMail["'][^>]*>(.*?)<\/\1>|<img[^>]*>/);
+      const match = remainingText.match(/<(a|svg|button|div)[^>]*(class=["']inMail["'][^>]*)?>(.*?)<\/\1>|<img[^>]*>/);
+
+
   
       if (match && match.index === 0) {
         element.innerHTML += match[0];
@@ -391,19 +363,6 @@ function startTypewriterEffect(element, text, speed = 5, callback = () => {}) {
       finalizeTypingEffect();
     }
   }
-
-
-  // function finalizeTypingEffect() {
-  //   setTimeout(() => {
-  //     // element.innerHTML = text.replace(/\n/g, "<br/>");
-  //     const textarea = document.getElementById("textarea");
-  //     textarea?.focus();
-  //     textareaDiv.classList.remove("hide");
-  //     body.classList.remove("mess");
-  //     scrollToBottom();
-  //     callback();
-  //   }, 350);
-  // }
 
   function finalizeTypingEffect() {
     setTimeout(() => {
@@ -1440,3 +1399,183 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
 // Изначально деактивируем кнопку отправки
 updateSendButtonState();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Функция для смены изображений
+document.body.addEventListener("click", (event) => {
+  if (event.target && event.target.id === "loadImageButton") {
+      const imgElement = document.querySelector(".randomsvg");
+      if (imgElement) {
+          const folderPath = "index-file/ukr/";
+          const svgFiles = [
+            "bird.svg", 
+            "bird2.svg", 
+            "puck_futin.svg", 
+            "bliat.svg", 
+            "fctptn.svg", 
+            "navalny.svg", 
+            "puck_futin.svg", 
+            "RU_Z_UA_Ctrl-Z.svg", 
+            "stop_putin_stop_war.svg", 
+            "stop_putin.svg", 
+            "zasilie.svg", 
+            "zasilie.svg"
+          ]; // Укажите ваши имена файлов
+          const randomIndex = Math.floor(Math.random() * svgFiles.length);
+          const randomSvg = svgFiles[randomIndex];
+
+          // Добавляем уникальный параметр для предотвращения кэширования
+          const timestamp = new Date().getTime();
+          imgElement.src = `${folderPath}${randomSvg}?t=${timestamp}`;
+      }
+  }
+});
+
+
+
+
+
+
+
+
+// Функция очитки сообщений
+function clearMessages() {
+  const messageDiv = document.querySelector('.messege'); // Выбираем div с классом messege
+  if (messageDiv) {
+    messageDiv.innerHTML = ""; // Очищаем содержимое, включая вложенные элементы
+  }
+  document.body.className = ""; // Удаляем все классы у body
+
+  // Очищаем параметры из адресной строки
+  const url = window.location.origin + window.location.pathname;
+  window.history.replaceState({}, document.title, url);
+}
+
+function clearAllMessages() {
+  clearMessages(); // Вызываем функцию для очистки сообщений
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Универсальная функция для загрузки скрипта
+function loadScript(src, id, callback) {
+  if (!document.getElementById(id)) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.id = id;
+    script.async = true;
+    if (callback) script.onload = callback;
+    document.body.appendChild(script);
+  }
+}
+
+// Универсальная функция для удаления скрипта
+function removeScript(id) {
+  const script = document.getElementById(id);
+  if (script) {
+    script.remove();
+  }
+}
+
+// Флаги для проверки загрузки скриптов
+let formScriptsLoaded = false;
+let inMailScriptLoaded = false;
+
+// Функция для загрузки скриптов для формы
+function loadFormScripts() {
+  if (!formScriptsLoaded) {
+    loadScript("index-file/js/mail.js", "mailScript");
+    loadScript("index-file/js/mailsend.js", "mailsendScript");
+    formScriptsLoaded = true;
+  }
+}
+
+// Функция для загрузки скрипта для div.inMail
+function loadInMailScript() {
+  if (!inMailScriptLoaded) {
+    loadScript("inMail/js/inMail.js", "inMailScript", initializeWhenReady);
+    inMailScriptLoaded = true;
+  }
+}
+
+// Создаем универсальный MutationObserver
+function createObserver(targetSelector, loadCallback, unloadCallback) {
+  return new MutationObserver(() => {
+    const targetElement = document.querySelector(targetSelector);
+
+    if (targetElement && !formScriptsLoaded && targetSelector === "form#tgcontact") {
+      loadCallback();
+      formScriptsLoaded = true; // Устанавливаем флаг для скриптов формы
+    } else if (!targetElement && formScriptsLoaded && targetSelector === "form#tgcontact") {
+      unloadCallback();
+      formScriptsLoaded = false; // Сбрасываем флаг для скриптов формы
+    }
+
+    if (targetElement && !inMailScriptLoaded && targetSelector === "div.inMail") {
+      loadCallback();
+      inMailScriptLoaded = true; // Устанавливаем флаг для inMailScript
+    } else if (!targetElement && inMailScriptLoaded && targetSelector === "div.inMail") {
+      unloadCallback();
+      inMailScriptLoaded = false; // Сбрасываем флаг для inMailScript
+    }
+  });
+}
+
+// Наблюдатель для формы
+const formObserver = createObserver(
+  "form#tgcontact",
+  loadFormScripts,
+  () => {
+    removeScript("mailScript");
+    removeScript("mailsendScript");
+  }
+);
+
+// Наблюдатель для div.inMail
+const inMailObserver = createObserver(
+  "div.inMail",
+  loadInMailScript,
+  () => removeScript("inMailScript")
+);
+
+// Настраиваем наблюдатели для отслеживания изменений в body
+formObserver.observe(document.body, { childList: true, subtree: true });
+inMailObserver.observe(document.body, { childList: true, subtree: true });
+
+// Функция для инициализации интерфейса
+function initializeWhenReady() {
+  const startDiv = document.querySelector(".inMail");
+  if (startDiv) {
+    createMailInterface(); // Вызываем функцию инициализации
+  }
+}
