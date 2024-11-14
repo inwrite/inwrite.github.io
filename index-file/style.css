@@ -1395,7 +1395,7 @@ body.personalMessage button.qwestion[name="contact"] {
   transform: scale(1.275) translate(.025em, .3em);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 769px) {
   html {
     /* font-size: 22px; */
   }
@@ -1410,9 +1410,17 @@ body.personalMessage button.qwestion[name="contact"] {
     opacity: 1;
     transform: translateY(0em);
     pointer-events: auto;
-    border-radius: .75em;
+
   }
 
+  body.margin-top .qwestions-button {
+    padding-top: 1.5em;
+    /* border-radius: .75em; */
+    /* border-top: .05em solid; */
+    /* border-color: var(--border); */
+    border-color: transparent;
+    box-shadow: 0em -2em 3.5em -4.5em var(--black-);
+  }
   button.qwestion {
     display: flex !important;
   }
@@ -1428,7 +1436,7 @@ body.personalMessage button.qwestion[name="contact"] {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
   .ava {
     position: relative;
