@@ -220,23 +220,6 @@ updateBodyClass();
 
 
 
-// document.addEventListener("click", function (event) {
-//   const button = event.target.closest(".qwestion");
-//   if (button) {
-//     const textarea = document.getElementById("textarea");
-//     const qwestionsData = button.getAttribute("data-qwestions") || "";
-//     textarea.value = qwestionsData;
-//     textarea.focus();
-
-//     // Пересчитываем высоту textarea после вставки текста
-//     textarea.style.height = "auto";
-//     textarea.style.height = `${textarea.scrollHeight}px`;
-
-//     updateBodyClass();
-//     updateSendButtonState();
-//   }
-// });
-
 
 document.addEventListener("click", function (event) {
   const button = event.target.closest(".qwestion");
@@ -244,7 +227,7 @@ document.addEventListener("click", function (event) {
     const textarea = document.getElementById("textarea");
     const qwestionsData = button.getAttribute("data-qwestions") || "";
     textarea.value = qwestionsData;
-    textarea.focus();
+    // textarea.focus();
 
     // Пересчитываем высоту textarea после вставки текста
     textarea.style.height = "auto";
@@ -373,7 +356,7 @@ function startTypewriterEffect(element, text, speed = 5, callback = () => {}) {
       }
   
       const textarea = document.getElementById("textarea");
-      textarea?.focus();
+      // textarea?.focus();
       textareaDiv.classList.remove("hide");
       body.classList.remove("mess");
       scrollToBottom();
@@ -1107,7 +1090,7 @@ document
 if (containsValidKeywords(textareaValue, clearKeywords)) {
   clearMessages();
   textarea.value = "";
-  textarea.focus();
+  // textarea.focus();
   updateBodyClass();
   updateSendButtonState();
   return;
@@ -1121,7 +1104,7 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
     document.body.classList.add("contactMessage");
     textarea.value = "";
-    textarea.focus();
+    // textarea.focus();
     updateBodyClass();
     updateSendButtonState();
     return;
@@ -1134,7 +1117,7 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
     document.body.classList.add("personalMessage");
     textarea.value = "";
-    textarea.focus();
+    // textarea.focus();
     updateBodyClass();
     updateSendButtonState();
     return;
@@ -1148,7 +1131,7 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
     document.body.classList.add("ukrainMessage");
     textarea.value = "";
-    textarea.focus();
+    // textarea.focus();
     updateBodyClass();
     updateSendButtonState();
     return;
@@ -1166,7 +1149,7 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
     document.body.classList.add("tempmailMessage");
     textarea.value = "";
-    textarea.focus();
+    // textarea.focus();
     updateBodyClass();
     updateSendButtonState();
     return;
@@ -1392,7 +1375,7 @@ if (containsValidKeywords(textareaValue, clearKeywords)) {
 
 
   document.getElementById("textarea").value = "";
-  textarea.focus();
+  // textarea.focus();
   updateBodyClass();
   updateSendButtonState();
 });
