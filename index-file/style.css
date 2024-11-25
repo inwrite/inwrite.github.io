@@ -1414,6 +1414,10 @@ body.personalMessage button.qwestion[name="contact"] {
         box-shadow: 0em -2em 2em -2em rgb(var(--black) / 10%);
     }
 
+    body.sendMessage .qwestions-textarea {
+      height: auto;
+  }
+  
 @media (max-width: 769px) {
   html {
     /* font-size: 22px; */
