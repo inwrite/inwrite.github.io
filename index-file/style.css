@@ -211,7 +211,8 @@ textarea {
 
 textarea:focus,
 textarea:focus-visible {
-  outline: 0.15em solid var(--outline);
+  outline: 0em solid var(--outline);
+  box-shadow: inset 0em 0em 0em 0.15em var(--outline);
 }
 
 .qwestions-button {
