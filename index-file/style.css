@@ -1392,11 +1392,15 @@ body.personalMessage button.qwestion[name="contact"] {
   height: 5em;
   border-radius: 5em;
   border: 0em solid;
-  /* border-color: var(--border); */
+  border-color: var(--border);
   box-shadow: 0 0 0 0.05em var(--border);
   margin-left: -6.5em;
   overflow: hidden;
-  background: linear-gradient(0deg, rgb(175 181 200) 0%, rgb(233 237 243));
+  /* background: linear-gradient(0deg, rgb(175 181 200) 0%, rgb(233 237 243)); */
+  /* background: var(--bg-input); */
+  background-color: var(--bg-input);
+  /* border: 0.05em solid; */
+  /* border-color: var(--border); */
 }
 
 .ava img {
