@@ -1,11 +1,28 @@
-// config.js
+const encryptedOpenAI = "HhJ+FREdD1kjCjYvACcgG0srTCcgGgYMPAcXKgs1IlQ7WDYwDQ85EAZzBB0GCDVTV0UCNg0sSSEmKyMTAzUBPQ46Ihw1UgoxVCECKh86MD49NSZWNicHEiszBVAhEzc+EwwrOzgyJ1UfJDISNRVUTgwCAkIQGTExPigyYSAXCikwEj8QCkBnKgcICB9yJzI+CGQiEgpILCgpDRgPMRI8BCIneyQ=";
+const encryptedBotToken = "WkxjXFtBUkVzUUMsOBUDNyIXByIrCFQWG1cqRzEfGw8YISkpChcYBCJ9Oh4FHg==";
+const encryptedChatId = "QEhjVVJKU0B+XEFcSWA=";
 
-// Ключ API OpenAI
-window.OPENAI_API_KEY = "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";
+// XOR-ключ
+const xorKey = "mySecretKey";
 
-// Константы для Telegram
-const botToken = "7509837184:AAFfTPrsiNq9oH2I5TkPjaLPzotjaV6_ghg";
-const chatId = "-1001864598103";
+// Функция XOR-шифрования/дешифрования
+function xorCipher(input, key) {
+  let output = "";
+  for (let i = 0; i < input.length; i++) {
+    output += String.fromCharCode(input.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+  }
+  return output;
+}
+
+// Расшифровка значений
+const decodedOpenAI = xorCipher(atob(encryptedOpenAI), xorKey);
+const decodedBotToken = xorCipher(atob(encryptedBotToken), xorKey);
+const decodedChatId = xorCipher(atob(encryptedChatId), xorKey);
+
+// Присваиваем расшифрованное значение переменным
+window.OPENAI_API_KEY = decodedOpenAI;
+const botToken = decodedBotToken;
+const chatId = decodedChatId;
 
 // Файл кэша и настройки анимации
 const cacheFile = "cache.json";
