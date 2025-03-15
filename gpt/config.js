@@ -13,13 +13,15 @@
     console.log('Ответ от сервера:', data);
 
     if (data.success) {
-      // Если нужно, используем полученную информацию
-      // Например, data.message
+      // Сохраняем ключ в window
+      window.OPENAI_API_KEY = data.OPENAI_API_KEY;
     } else {
-      console.error('Сервер вернул ошибку или пустые данные');
+      console.error('Сервер вернул ошибку');
     }
   } catch (error) {
-    console.error('Не удалось загрузить конфигурацию с сервера:', error);
+    console.error('Не удалось получить ключ:', error);
+    // Подставим заглушку
+    window.OPENAI_API_KEY = 'test';
   }
 
   // Здесь можно объявить любые другие глобальные настройки, не связанные с секретами
