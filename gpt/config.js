@@ -1,35 +1,22 @@
 // config.js
 
-(async function() {
-  // URL до вашего PHP-скрипта (getConfig.php) на сервере
-  const CONFIG_URL = 'https://inwrite.org/gpt-chat/getConfig.php';
+// Ключ API OpenAI
+window.OPENAI_API_KEY = "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";
 
-  try {
-    const response = await fetch(CONFIG_URL);
-    if (!response.ok) {
-      throw new Error(`Ошибка сети: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log('Ответ от сервера:', data);
+// Константы для Telegram
+const botToken = "7509837184:AAFfTPrsiNq9oH2I5TkPjaLPzotjaV6_ghg";
+const chatId = "-1001864598103";
 
-    if (data.success) {
-      // Сохраняем ключ в window
-      window.OPENAI_API_KEY = data.OPENAI_API_KEY;
-    } else {
-      console.error('Сервер вернул ошибку');
-    }
-  } catch (error) {
-    console.error('Не удалось получить ключ:', error);
-    // Подставим заглушку
-    window.OPENAI_API_KEY = 'test';
-  }
+// Файл кэша и настройки анимации
+const cacheFile = "cache.json";
+const letterDelay = 1;  // задержка между символами (мс)
+const lineDelay = 20;   // задержка между строками (мс)
 
-  // Здесь можно объявить любые другие глобальные настройки, не связанные с секретами
-  window.cacheFile = "cache.json";
-  window.letterDelay = 1;
-  window.lineDelay = 20;
-  window.chatModel = "gpt-3.5-turbo";
-  window.OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+// Выбор модели для OpenAI
+const chatModel = "gpt-3.5-turbo";
+
+// URL для OpenAI API
+const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
 
 // Глобальные константы для строковых шаблонов
 window.CONSTANTS = {
@@ -116,8 +103,14 @@ If a user asks who you are, respond that you are Mikhail’s virtual assistant, 
   <button class='preset-button link-button' data-text='Contact Mikhail through this chat'>Contact Mikhail 💬</button>"
 `;
 
-  // === Новые настройки для отключения сохранения ===
+
+
+
+// === Новые настройки для отключения сохранения ===
 // Установите в false, если не нужно сохранять данные в кэш или страницы. true - если нужно
 window.SAVE_CACHE  = false;  // Сохранение кэша (cache.json и saveCache.php)
 window.SAVE_PAGES = false;   // Если у вас есть логика сохранения страниц – можно отключить
-})();
+
+
+
+
