@@ -128,8 +128,8 @@ If a user asks who you are, respond that you are Mikhail’s virtual assistant, 
 
 // === Новые настройки для отключения сохранения ===
 // Установите в false, если не нужно сохранять данные в кэш или страницы. true - если нужно
-window.SAVE_CACHE  = true;  // Сохранение кэша (cache.json и saveCache.php)
-window.SAVE_PAGES = true;   // Если у вас есть логика сохранения страниц – можно отключить
+window.SAVE_CACHE  = false;  // Сохранение кэша (cache.json и saveCache.php)
+window.SAVE_PAGES = false;   // Если у вас есть логика сохранения страниц – можно отключить
 
 
 
