@@ -1134,7 +1134,7 @@ button.btn-link:hover {
 
   .help-div.open-help,
   .mikhail-div.open-mikhail {
-    top: 100%;
+    top: calc(100% - -8px);
   }
 
   body.has-message .help-div.open-help,
