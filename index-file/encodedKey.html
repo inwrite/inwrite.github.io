@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обфускация API-ключа</title>
+</head>
+<body>
+  <h1>Обфускация API-ключа</h1>
+  
+  <label for="originalKey">Исходный ключ:</label><br>
+  <textarea id="originalKey" rows="3" cols="60"></textarea><br><br>
+  
+  <label for="xorKey">XOR-ключ (по умолчанию "mySecretKey"):</label><br>
+  <input type="text" id="xorKey" value="mySecretKey" size="30"><br><br>
+  
+  <button onclick="encodeKey()">Зашифровать</button>
+  <button onclick="decodeKey()">Расшифровать</button>
+
+  <p><strong>Результат:</strong></p>
+  <p id="result" style="white-space: pre-wrap;"></p>
+
+  <script>
+    // Функция XOR-шифрования/дешифрования
+    function xorCipher(input, key) {
+      let output = "";
+      for (let i = 0; i < input.length; i++) {
+        output += String.fromCharCode(
+          input.charCodeAt(i) ^ key.charCodeAt(i % key.length)
+        );
+      }
+      return output;
+    }
+
+    // Функция для шифрования (XOR + Base64)
+    function encodeKey() {
+      const originalKey = document.getElementById('originalKey').value.trim();
+      const xorKey = document.getElementById('xorKey').value.trim();
+
+      if (!originalKey) {
+        alert("Пожалуйста, введите исходный ключ!");
+        return;
+      }
+
+      // XOR-шифрование
+      const encrypted = xorCipher(originalKey, xorKey);
+      // Base64-кодирование
+      const encodedKey = btoa(encrypted);
+
+      document.getElementById('result').textContent = encodedKey;
+    }
+
+    // Функция для расшифровки (Base64 -> XOR)
+    function decodeKey() {
+      const encodedKey = document.getElementById('originalKey').value.trim();
+      const xorKey = document.getElementById('xorKey').value.trim();
+
+      if (!encodedKey) {
+        alert("Пожалуйста, введите зашифрованный ключ!");
+        return;
+      }
+
+      try {
+        // Base64-декодирование
+        const decryptedBase64 = atob(encodedKey);
+        // XOR-дешифрование
+        const decryptedKey = xorCipher(decryptedBase64, xorKey);
+
+        document.getElementById('result').textContent = decryptedKey;
+      } catch (e) {
+        alert("Ошибка при расшифровке! Проверьте правильность ввода.");
+      }
+    }
+  </script>
+</body>
+</html>
