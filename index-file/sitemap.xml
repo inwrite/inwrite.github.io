@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url>
-<loc>https://inwrite.org/gpt/</loc>
+<loc>inwrite.github.io</loc>
 <priority>1.0</priority>
 </url>
 <url>
-<loc>https://inwrite.org/gpt/pages/view-mikhail-s-portfolio.html</loc>
+<loc>inwrite.github.io/index-file/pages/view-mikhail-s-portfolio.html</loc>
 <priority>0.8</priority>
 </url>
 </urlset>
