@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /index-file/pages/
+Disallow: /chat/
+Sitemap: https://inwrite.org/index-file/sitemap.xml
