@@ -52,16 +52,16 @@ $pageSlug = trim($pageSlug, '-');
 $pageFile = $pagesDir . $pageSlug . ".html";
 
 // URL of the page to be used in meta tags
-$pageUrl = "https://inwrite.org/gpt/pages/$pageSlug.html";
+$pageUrl = "https://inwrite.github.io/index-file/pages/$pageSlug.html";
 
 // Default image (leave empty if no default image is set)
-$defaultImage = "https://inwrite.org/gpt/images/default.jpg";
+$defaultImage = "https://inwrite.github.io/index-file/default.jpg";
 
 // Determine which image to use: if provided in the request, use it; otherwise, use the default image
 $imageToUse = "";
 if (!empty($providedImage)) {
     if (stripos($providedImage, 'http') !== 0) {
-         $imageToUse = "https://inwrite.org/gpt/" . ltrim($providedImage, '/');
+         $imageToUse = "https://inwrite.github.io/" . ltrim($providedImage, '/');
     } else {
          $imageToUse = $providedImage;
     }
@@ -158,11 +158,11 @@ $sitemapContent = "<?xml version='1.0' encoding='UTF-8'?>\n";
 $sitemapContent .= "<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>\n";
 
 // Add the main page
-$sitemapContent .= "<url>\n<loc>https://inwrite.org/gpt/</loc>\n<priority>1.0</priority>\n</url>\n";
+$sitemapContent .= "<url>\n<loc>https://inwrite.github.io/</loc>\n<priority>1.0</priority>\n</url>\n";
 
 // Add FAQ pages
 foreach (glob($pagesDir . "*.html") as $page) {
-    $pageUrlSitemap = "https://inwrite.org/gpt/" . str_replace($pagesDir, "pages/", $page);
+    $pageUrlSitemap = "https://inwrite.github.io/" . str_replace($pagesDir, "pages/", $page);
     $sitemapContent .= "<url>\n<loc>$pageUrlSitemap</loc>\n<priority>0.8</priority>\n</url>\n";
 }
 
