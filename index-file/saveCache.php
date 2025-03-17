@@ -125,7 +125,13 @@ $htmlContent = "<!DOCTYPE html>
     <meta name='twitter:description' content='$formattedDescription'>
     
     $imageMetaTags
-
+    
+    <style>
+        img, svg, video {
+            max-width: 100%;
+        }
+    </style>
+    
     <!-- JSON-LD Structured Data for FAQPage -->
     <script type='application/ld+json'>
     $jsonLdJson
