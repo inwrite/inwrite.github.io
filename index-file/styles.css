@@ -1139,10 +1139,10 @@ a.instagram-link:active {
 .highlight-cancelled:after {
     content: '';
     background: linear-gradient(0deg, rgb(var(--white-rgb)/100%) 25%, transparent);
-    width: 100%;
+    width: calc(100% - 16px);
     height: 100%;
     position: absolute;
-    top: 0;
+    top: 0px;
 }
 
 body.has-message.type-txt .chat-footer {
