@@ -12,18 +12,17 @@
     <link rel="icon" href="index-file/favicon/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
 
 
-    <title>Web — Dev&Des</title>    
+    <title>GPT-3.5</title>    
     <script>
-    // function loadStylesheet() {
-    //     var link = document.createElement("link");
-    //     link.rel = "stylesheet";
-    //     link.href = "index-file/styles.css?v=" + new Date().getTime();
-    //     document.head.appendChild(link);
-    // }
+    function loadStylesheet() {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "index-file/styles.css?v=" + new Date().getTime();
+        document.head.appendChild(link);
+    }
 
-    // loadStylesheet();
+    loadStylesheet();
 </script>
-<link rel="stylesheet" href="index-file/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -34,11 +33,13 @@
 <body>
   <div class="chat-div">
     <div class="hi">
-      <h1>How can I help?</h1>
-      <p class="hi"><p>
+      <!-- <h1 id="typing-h">How can I help?</h1> -->
+      <h1 class="hi-h1"></h1>
+
+      <p class="hii"><p>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
-          const hiP = document.querySelector("p.hi");
+          const hiP = document.querySelector("p.hii");
           if (!hiP) {
             return;
           }
@@ -614,5 +615,101 @@
       document.body.appendChild(script);
   }
  </script>
+
+
+
+
+
+<script>
+// typewriter.js
+(function() {
+  // Находим элемент h1 с классом "hi"
+  const header = document.querySelector("h1.hi-h1");
+  if (!header) return;
+
+  // Задаем задержки: между символами и перед сменой текста.
+  // Если глобально определены letterDelay и lineDelay, они будут использованы.
+  const letterDelay = window.letterDelay || 20; // задержка между символами (в мс)
+  const lineDelay = window.lineDelay || 800;    // задержка перед сменой текста (в мс)
+
+  // Функция анимации печати текста, имитирующая эффект печатной машинки.
+  function animateText(element, text) {
+    return new Promise(resolve => {
+      element.textContent = ""; // Очищаем содержимое элемента
+      let index = 0;
+      function typeLetter() {
+        if (index < text.length) {
+          element.textContent += text[index];
+          index++;
+          setTimeout(typeLetter, letterDelay);
+        } else {
+          resolve();
+        }
+      }
+      typeLetter();
+    });
+  }
+
+  // Основная функция для последовательного вывода двух сообщений
+  async function runTypewriterEffect() {
+    // Вывод первого сообщения "Hello"
+    await animateText(header, "Hello");
+    // Ждем lineDelay, затем очищаем текст и выводим второе сообщение
+    setTimeout(async () => {
+      header.textContent = "";
+      await animateText(header, "How can I help?");
+      // После полного вывода второго сообщения добавляем класс "finish" к тегу body
+      // document.body.classList.add("finish");
+      setTimeout(() => {
+        document.body.classList.add("finish");
+      }, 600);
+      // Через 1 секунду добавляем еще один класс "finish-two"
+      setTimeout(() => {
+        document.body.classList.add("finish-two");
+      }, 1000);
+    }, lineDelay);
+  }
+
+  // Запуск эффекта с задержкой в 3 секунды после загрузки DOM
+  function init() {
+    setTimeout(runTypewriterEffect, 1000);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+
+</script>
+
+
+<style>
+
+body .hi p {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .2s, transform .2s;
+}
+
+body .chat-footer {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .2s, transform .2s;
+}
+
+
+body.finish .hi p {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+body.finish-two .chat-footer {
+    opacity: 1;
+    transform: translateY(0px);
+}
+</style>
 </body>
 </html>
