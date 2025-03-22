@@ -38,14 +38,14 @@ body {
    2. CSS Variables (merged)
    ========================================================================== */
 :root {
-  /* ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ */
+  /* ÃÅ¾Ã‘ÂÃÂ½ÃÂ¾ÃÂ²ÃÂ½Ã‘â€¹ÃÂµ ÃÂ¿ÃÂµÃ‘â‚¬ÃÂµÃÂ¼ÃÂµÃÂ½ÃÂ½Ã‘â€¹ÃÂµ */
   --user-chat-width: 70%;
 
-  /* ÐŸÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ Ð´Ð»Ñ Ñ‚Ð¸Ð¿Ð¾Ð³Ñ€Ð°Ñ„Ð¸ÐºÐ¸ */
+  /* ÃÅ¸ÃÂµÃ‘â‚¬ÃÂµÃÂ¼ÃÂµÃÂ½ÃÂ½Ã‘â€¹ÃÂµ ÃÂ´ÃÂ»Ã‘Â Ã‘â€šÃÂ¸ÃÂ¿ÃÂ¾ÃÂ³Ã‘â‚¬ÃÂ°Ã‘â€žÃÂ¸ÃÂºÃÂ¸ */
   /* font-size: 16px; */
   /* line-height: 28px; */
 
-  /* Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ */
+  /* Ãâ€ÃÂ¾ÃÂ¿ÃÂ¾ÃÂ»ÃÂ½ÃÂ¸Ã‘â€šÃÂµÃÂ»Ã‘Å’ÃÂ½Ã‘â€¹ÃÂµ ÃÂ¿ÃÂµÃ‘â‚¬ÃÂµÃÂ¼ÃÂµÃÂ½ÃÂ½Ã‘â€¹ÃÂµ */
   --black-rgb: 0 0 0;
   --white-rgb: 255 255 255;
   --link-color: #005cc5;
@@ -90,6 +90,8 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
   margin: 0;
+  display: inline-block;
+  width: 100%;
 }
 
 h1 {
@@ -105,6 +107,9 @@ h1:first-child {
 
 p {
   margin-bottom: 8px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
 }
 
 p:not(:first-child) {
@@ -605,7 +610,7 @@ button.cancel-button {
   overflow: hidden;
 }
 
-.chat-footer.scrolle-down-hide {
+body.finish-two .chat-footer.scrolle-down-hide, .chat-footer.scrolle-down-hide {
   transform: translateY(calc(100% - 62px));
 }
 
@@ -929,19 +934,10 @@ button.btn-link:hover {
   transform: none;
 }
 
-.hr {
-  font-size: 0;
-  width: 75%;
-  height: 0.5px;
-  background-color: rgb(var(--black-rgb)/10%);
-  margin: 0 auto;
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
 .hi {
   text-align: center;
   order: 1;
+  margin-top: 66px;
 }
 
 .hi h1 {
@@ -950,6 +946,13 @@ button.btn-link:hover {
   font-size: 28px;
   margin-bottom: 4px;
   color: rgb(var(--black-rgb)/90%);
+}
+
+h1.hi-h1 span {
+    font-size: .666665em;
+    letter-spacing: -0.0269em;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .message.bot button.preset-button.link-button {
@@ -1067,7 +1070,7 @@ b {
     --white-rgb: 0 0 0;
   }
 .ava-mikhail img {
-    background: linear-gradient(135deg, #d0d0d0, #5a5a5a);
+    background: linear-gradient(135deg, #4d4d4d, #000000);
 }
 }
 
@@ -1084,9 +1087,7 @@ b {
     animation-name: loading-shimmer;
     background: rgb(var(--black-rgb)/10%) gradient(linear,100% 0,0 0,from(rgb(var(--black-rgb)/10%)),color-stop(.5,rgb(var(--black-rgb)/65%)),to(rgb(var(--black-rgb)/10%)));
     background: rgb(var(--black-rgb)/10%) -webkit-gradient(linear,100% 0,0 0,from(rgb(var(--black-rgb)/10%)),color-stop(.5,rgb(var(--black-rgb)/65%)),to(rgb(var(--black-rgb)/10%)));
-
-  
-  background-clip: text;
+    background-clip: text;
     -webkit-background-clip: text;
     background-repeat: no-repeat;
     background-size: 50% 200%;
@@ -1148,4 +1149,141 @@ a.instagram-link:active {
 body.has-message.type-txt .chat-footer {
     opacity: 0;
     transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-size: 1.5em;
+    line-height: normal;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -.04rem;
+    font-size: 2.25em;
+    margin-bottom: .8888889em;
+}
+
+strong {
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+}
+
+.media-flex span {
+    max-width: 22%;
+    min-width: 8rem;
+    aspect-ratio: 1 / 1;
+    border-radius: .75rem;
+    overflow: hidden;
+    margin-left: 1.75rem;
+    margin-bottom: 1.75rem;
+    margin-top: .25rem;
+    clear: right;
+    float: right;
+}
+
+.media-flex span img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.media-flex span img:hover {
+    transform: scale(1.03);
+}
+
+
+
+  .fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    z-index: 9999;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: inherit;
+    z-index: 1;
+  }
+
+  .fullscreen-caption {
+    color: white;
+    margin: 20px 20px;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .fullscreen-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: rgb(255 255 255 / 65%);
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: color .2s;
+  }
+
+.fullscreen-close svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.fullscreen-close:hover {
+    color: rgb(255 255 255 / 90%);
+}
+
+
+hr, .hr {
+    height: 0.5px;
+    width: 100%;
+    background-color: rgb(var(--black-rgb)/25%);
+    display: inline-block;
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+hr + h1,
+hr + h2,
+hr + h3,
+hr + h4,
+hr + h5,
+hr + h6 {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: 600;
 }
