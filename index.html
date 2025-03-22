@@ -30,29 +30,16 @@
     
 
 </head>
+
+
+
+    
 <body>
   <div class="chat-div">
     <div class="hi">
       <!-- <h1 id="typing-h">How can I help?</h1> -->
       <h1 class="hi-h1"></h1>
-
-      <p class="hii"><p>
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-          const hiP = document.querySelector("p.hii");
-          if (!hiP) {
-            return;
-          }
-          const variants = [
-            "I am an AI assistant created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button> to help you with web development.",
-            "I am a virtual AI developed by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button> to quickly answer web development questions.",
-            "Get quick web development tips with the help of an AI assistant created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button>.",
-            "Got web development questions? I am an AI created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button>, ready to help."
-          ];
-            const randomText = variants[Math.floor(Math.random() * variants.length)];
-            hiP.innerHTML = randomText;
-          });
-        </script>
+      <p class="hii"></p>
     </div>
     <div id="chatbox"></div>
     <div class="chat-footer">
@@ -85,12 +72,28 @@
                 </div>
             </div>
         </div>
-      <p>The AI assistant may make mistakes. <button class="preset-button btn-link" data-text="contact Mikhail"><span>Contact Mikhail</span></button> — he will better understand your needs.</p>
+      <!-- <p>The AI assistant may make mistakes. <button class="preset-button btn-link" data-text="contact Mikhail"><span>Contact Mikhail</span></button> — he will better understand your needs.</p> -->
     </div>
   </div>
 
 
 
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+          const hiP = document.querySelector("p.hii");
+          if (!hiP) {
+            return;
+          }
+          const variants = [
+            "I am an AI assistant created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button> to help you with web development.",
+            "I am a virtual AI developed by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button> to quickly answer web development questions.",
+            "Get quick web development tips with the help of an AI assistant created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button>.",
+            "Got web development questions? I am an AI created by <button class='preset-button btn-link' data-text='Who is Mikhail?'>Mikhail</button>, ready to help."
+          ];
+            const randomText = variants[Math.floor(Math.random() * variants.length)];
+            hiP.innerHTML = randomText;
+          });
+        </script>
 
 <script>
   function loadConfig(callback) {
