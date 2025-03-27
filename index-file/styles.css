@@ -42,7 +42,7 @@ body {
   --user-chat-width: 70%;
 
   /* Сообщение до левого шпионщика */
-  /* font-size: 16px; */
+  font-size: 20px;
   /* line-height: 28px; */
 
   /* Сообщение */
@@ -728,7 +728,7 @@ body.type-txt .userInput + p {
 
 .help-div.open-help,
 .mikhail-div.open-mikhail {
-  bottom: calc(100% - 0);
+  bottom: 100%;
   display: flex;
   z-index: 1;
 }
