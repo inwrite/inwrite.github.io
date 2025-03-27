@@ -229,6 +229,7 @@ code {
   word-break: normal;
   word-spacing: normal;
   font-size: 0.875em; /* 14px / 16 */
+  padding-top: 2.5em !important;!i;!;
 }
 
 pre {
@@ -249,9 +250,11 @@ code.language-python:before {
   color: rgb(var(--black-rgb)/65%);
   background-color: rgb(var(--black-rgb)/5%);
   margin-left: -0.875em; /* -14px / 16 */
-  margin-right: -0.875em; /* -14px / 16 */
-  margin-top: -0.875em; /* -14px / 16 */
-  margin-bottom: 1em; /* 16px / 16 */
+  /* margin-right: -0.875em; */ /* -14px / 16 */
+  margin-top: -2.875em; /* -14px / 16 */
+  /* margin-bottom: 1em; */ /* 16px / 16 */
+  border-radius: .275em;
+  position: absolute;
 }
 
 .message.user code.language-javascript:before,
