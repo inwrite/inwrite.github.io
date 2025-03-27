@@ -575,6 +575,7 @@ body:is(.step-1, .step-2, .step-3, .step-4) .userInput {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 1px;
 }
 
 .userInputBTN {
@@ -784,6 +785,7 @@ body.type-txt .userInput+p {
   overflow: hidden;
   text-overflow: ellipsis;
   order: 0;
+  margin-top: 1px;
 }
 
 .mikhail-div button span.vertical-line-keyboard {
