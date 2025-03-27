@@ -829,7 +829,7 @@ button.help-question:before {
   padding: 0 0.375em; /* 0px and 6px / 16 */
   border-radius: 0.1875em; /* 3px / 16 */
   display: inline-block;
-  max-width: 2.25em; /* 36px / 16 */
+  max-width: 2.753em; /* 36px / 16 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -837,6 +837,7 @@ button.help-question:before {
 
 button.help-question svg {
   order: 0;
+  width: 1.125em;
 }
 
 button.help-question span {
@@ -1257,4 +1258,18 @@ hr + h6 {
 h3 {
   font-size: 1.17em;
   font-weight: 600;
+}
+
+
+.userInput button svg {
+    width: 1em;
+    height: auto;
+}
+
+button#sendButtonMessage svg {
+    width: 2em;
+}
+
+button.preset-button.btn-secondary svg {
+    width: 1.125em;
 }
