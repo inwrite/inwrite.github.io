@@ -911,6 +911,7 @@ button.btn-link:hover {
   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
   align-items: center;
   justify-content: center;
+  /* position: relative; */
 }
 
 .ava-mikhail img {
@@ -1101,8 +1102,44 @@ a.instagram-link:after {
   padding: 0 0.5em; /* 0 and 8px / 16 */
   font-size: 0.75em; /* 12px / 16 */
   color: rgb(var(--black-rgb)/65%);
-  font-weight: 500;
+  /* font-weight: 500; */
   border-radius: 0.25em; /* 4px / 16 */
+  position: absolute;
+  top: -3em;
+  border-radius: .75em;
+  padding: .25em .5em;
+  margin-right: 0;
+  margin-left: -0.75em;
+  /* filter: drop-shadow(0 4px 12px rgb(var(--black-rgb)/15%)); */
+  /* box-shadow: 0px .2em .75em rgb(0 0 0 / 15%); */
+  /* z-index: -9999; */
+}
+
+a.instagram-link span:after {
+  content: '';
+  background-color: rgb(var(--black-rgb)/5%);
+  width: 0.6em;
+  height: .3em;
+  position: absolute;
+  top: -.565em;
+  border-radius: 0 0 .75em .75em;
+  margin-right: 0;
+  margin-left: -3em;
+  /* z-index: 999; */
+}
+
+
+a.instagram-link span:before {
+  content: '';
+  background-color: rgb(var(--black-rgb)/5%);
+  width: .3em;
+  height: .3em;
+  position: absolute;
+  top: -.25em;
+  border-radius: .75em;
+  margin-right: 0;
+  margin-left: -2.5em;
+  /* z-index: 999; */
 }
 
 a.instagram-link {
@@ -1111,10 +1148,16 @@ a.instagram-link {
   justify-content: center;
   flex-direction: column;
   gap: 0.25em; /* 4px / 16 */
+  position: relative;
+  margin-top: 3em;
 }
 
 a.instagram-link:hover:after,
-a.instagram-link:active:after {
+a.instagram-link:active:after,
+a.instagram-link:hover span:after,
+a.instagram-link:active span:after,
+a.instagram-link:hover span:before,
+a.instagram-link:active span:before{
   background-color: rgb(var(--black-rgb)/10%);
 }
 
