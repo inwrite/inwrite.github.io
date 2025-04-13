@@ -127,6 +127,10 @@ section>img {
   transition: all .3s;
 }
 
+.div-t-shirt.audio {
+    flex-direction: column;
+}
+
 .div-t-shirt img {
   position: relative;
   width: 100%;
